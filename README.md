@@ -12,7 +12,7 @@ Remember to change the surname and given name values if the language preference 
 2. install pip
 3. install pytest (optional)
 4. install playwright
-5. modify the '# input value setting' section of the source code
+5. modify the '# input value setting' section of the source code to your preferred values (e.g. your name, hkid, tel. mobile etc) before testing the programme
 
 # Test
 type 'pytest main.py' (only if pytest is installed) or 'python main.py' in the terminal or cmd to run
