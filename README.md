@@ -1,11 +1,11 @@
 # auto_book_covid_test_centre_hk
 <b>FOR PYTHON LEARNING ONLY</b>
 <pre>The current version is to book a specific centre <b>at the earliest possible timeslot today</b> by default. 
-The variable for bookings at tomorrow is also provided, please change the source before running the programme.
+The variable for bookings in tomorrow is also provided, please change the source code before running the programme.
 A SMS of booking confirmation sent by the HKG will be received if booking successfully.</pre>
 
-<pre>The language preference of the receiving SMS is Chinese by default, it can be changed to receive English SMS.
-Please noted that the surname and given name value also need to be updated when the language preference is changed, otherwise errors may occur.</pre>
+<pre>The language preference of the receiving SMS is Chinese by default, it can be changed to English in the source code.
+Remember to change the surname and given name values if the language preference is changed, otherwise you may not get your full name correctly.</pre>
 
 # Requirement
 1. install pyhton 3.6 or above
