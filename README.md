@@ -1,4 +1,7 @@
 # auto_book_covid_test_centre_hk
+
+Please credit me if you are using the source code
+
 <b>FOR PYTHON LEARNING ONLY</b>
 <pre>The current version is to book a specific centre <b>at the earliest possible timeslot today</b> by default. 
 The variable for bookings in tomorrow is also provided, please change the source code before running the programme.
