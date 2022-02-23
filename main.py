@@ -5,7 +5,7 @@ import random
 
 
 async def capScreen(page_elm):
-    await page_elm.screenshot(path="booking.ng", full_page=True)
+    await page_elm.screenshot(path="booking.png", full_page=True)
 
 
 def chok(page_elm, date_elm, desired_district, desired_centre):
