@@ -23,7 +23,7 @@ def chok(page_elm, date_elm, desired_district, desired_centre):
 
     time_slot_list = page_elm.locator("input[type=\"radio\"][name=\"step_2_booking_timeslot\"][value]")
     i = 0
-    while i <= time_slot_list.count():
+    while i <= time_slot_list.count()-1:
         #print("i = " + str(i))
         if time_slot_list.nth(i).is_enabled():
             time_slot_list.nth(i).click()
