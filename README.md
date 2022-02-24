@@ -11,11 +11,13 @@ A SMS of booking confirmation sent by the HKG will be received if booking succes
 Remember to change the surname and given name values if the language preference is changed, otherwise you may not get your full name correctly.</pre>
 
 # Requirement
-1. install pyhton 3.6 or above
+1. install pyhton 3.7 or above
 2. install pip
 3. install pytest (optional)
 4. install playwright
 5. modify the '# input value setting' section of the source code to your preferred values (e.g. your name, hkid, tel. mobile etc) before testing the programme
+
+* Requires MacOS 10.14 (Mojave) or above on MAC platform 
 
 # Test
 type 'pytest main.py' (only if pytest is installed) or 'python main.py' in the terminal or cmd to run
