@@ -43,8 +43,14 @@ def run(playwright_elm):
     # input value setting
     today_a = datetime.today()
     tomorrow = today_a + timedelta(days=1)
+    #Identity document type of applicant:
+    typeOfNatCard = "HK_IDCARD" # pick from the list at the bottom of this file
+    #This is for the hkid card
     hkid_prefix = 'hkid'
     hkid_check_digit = 'hkid_check_digit'
+    #This is for other ID card 
+    otherid_prefix = ''
+    
     surname = 'chin or eng surname'
     given_name = 'chin or eng given name'
     # select language
@@ -63,8 +69,13 @@ def run(playwright_elm):
     page.goto('https://booking.communitytest.gov.hk/form/index_tc.jsp')
     page.wait_for_load_state()
 
-    page.fill('#step_1_documentId_HKIC_prefix', hkid_prefix)
-    page.fill('#step_1_documentId_HKIC_check_digit', hkid_check_digit)
+    if typeOfNatCard != "HK_IDCARD":
+        page.locator("select[name=\"step_1_documentId_Type\"]").select_option(typeOfNatCard)
+        page.fill('#step_1_other_documentId', otherid_prefix)
+    else:
+        page.fill('#step_1_documentId_HKIC_prefix', hkid_prefix)
+        page.fill('#step_1_documentId_HKIC_check_digit', hkid_check_digit)
+
     page.click('input[data-role="BOOKING"]')
 
     page.wait_for_selector('span.ckbox-checkmark') # if reCAPTCHA appears and needs human input
@@ -98,6 +109,19 @@ def run(playwright_elm):
 
 with sync_playwright() as playwright:
     run(playwright).setTimeout(9999999)
+
+#value of type NAT cards
+# <select id="step_1_ATGC_NATCARDTYPE" class="form-control" name="step_1_documentId_Type" style="min-width: 300px" required="">
+# <option value="HK_IDCARD" selected="selected">香港身份證 / 出生證明書</option>
+# <option value="CH">內地居民港澳通行證</option>
+# <option value="CH_IDCARD">中國居民身份證</option>
+# <option value="CH_PASS">中國護照</option>
+# <option value="HC">港澳居民來往內地通行證（即回鄉證）</option>
+# <option value="HCTP">台灣居民來往大陸通行證</option>
+# <option value="HK_PASS">香港特區護照</option>
+# <option value="MO_IDCARD">澳門居民身份證</option>
+# <option value="OTH_PASS">其他護照或旅遊證件</option>
+# </select>
 
 # value of district and centre
 # <select id="step_2_district" name="step_2_district" class="form-control" onchange="" required="">
